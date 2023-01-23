@@ -49,11 +49,6 @@ public class Order {
     @JoinColumn(name = "ship_via")
     private Shipper shipper;
 
-    @ManyToMany
-    @JoinTable(
-            name = "order_details",
-            joinColumns = @JoinColumn(name = "order_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private Set<Product> products = new LinkedHashSet<>();
+    @OneToMany(mappedBy = "order")
+    private Set<OrderDetail> orderDetails = new LinkedHashSet<>();
 }

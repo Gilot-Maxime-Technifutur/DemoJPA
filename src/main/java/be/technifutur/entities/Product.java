@@ -41,6 +41,6 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @ManyToMany(mappedBy = "products")
-    private Set<Order> orders = new LinkedHashSet<>();
+    @OneToMany(mappedBy = "product")
+    private Set<OrderDetail> orderDetails = new LinkedHashSet<>();
 }
