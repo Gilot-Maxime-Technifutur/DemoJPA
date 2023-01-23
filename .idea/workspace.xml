@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6115a9c-ef45-469c-bf1f-0d320eb8ab12" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Demographic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/OrderDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/OrderDetailID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Shipper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Region.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Territory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Supplier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

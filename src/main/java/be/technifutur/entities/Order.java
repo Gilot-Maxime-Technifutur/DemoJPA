@@ -42,6 +42,10 @@ public class Order {
     private Customer customer;
 
     @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
+
+    @ManyToOne
     @JoinColumn(name = "ship_via")
     private Shipper shipper;
 

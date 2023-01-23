@@ -22,6 +22,8 @@ public class Product {
     private String name;
     @Column(name = "quantity_per_unit")
     private String qttPerUnit;
+    @Column(name = "unit_price")
+    private Double unitPrice;
     @Column(name = "units_in_stock")
     private Integer stock;
     @Column(name = "units_on_order")
@@ -34,6 +36,10 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     @ManyToMany(mappedBy = "products")
     private Set<Order> orders = new LinkedHashSet<>();
