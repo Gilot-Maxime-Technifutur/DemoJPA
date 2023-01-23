@@ -20,6 +20,8 @@ public class Category {
     private Long id;
     @Column(name = "category_name")
     private String name;
+    @Column(name = "description")
+    private String descr;
     //image
 
     @OneToMany(mappedBy = "category")

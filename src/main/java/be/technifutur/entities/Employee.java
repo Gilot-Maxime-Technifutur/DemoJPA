@@ -8,8 +8,6 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -47,14 +45,14 @@ public class Employee {
     private String photoPath;
 
     @OneToMany(mappedBy = "employee")
-    private List<Order> orders = new LinkedList<>();
+    private Set<Order> orders = new LinkedHashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "reports_to")
     private Employee reportTo;
 
-    @OneToMany(mappedBy = "reportTo")
-    private Set<Employee> employees = new LinkedHashSet<>();
+//    @OneToMany(mappedBy = "reportTo")
+//    private Set<Employee> employees = new LinkedHashSet<>();
 
     @ManyToMany
     @JoinTable(
@@ -62,6 +60,6 @@ public class Employee {
             joinColumns = @JoinColumn(name = "employee_id"),
             inverseJoinColumns = @JoinColumn(name = "territory_id")
     )
-    private List<Territory> territories = new LinkedList<>();
+    private Set<Territory> territories = new LinkedHashSet<>();
 
 }

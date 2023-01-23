@@ -31,7 +31,7 @@ public class Product {
     @Column(name = "reorder_level")
     private Integer reorderLevel;
     @Column(columnDefinition = "int4")
-    private boolean discontinued;
+    private Integer discontinued;
 
     @ManyToOne
     @JoinColumn(name = "supplier_id")

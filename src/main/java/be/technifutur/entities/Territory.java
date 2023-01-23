@@ -6,8 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "territories")
@@ -22,7 +22,7 @@ public class Territory {
     private String descr;
 
     @ManyToMany(mappedBy = "territories")
-    private List<Employee> employees = new LinkedList<>();
+    private Set<Employee> employees = new LinkedHashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "region_id")
