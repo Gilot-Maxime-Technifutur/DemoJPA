@@ -1,13 +1,13 @@
 package be.technifutur.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
@@ -17,17 +17,24 @@ import lombok.Setter;
 public class Product {
     @Id
     @Column(name = "product_id")
-    private long id;
+    private Long id;
     @Column(name = "product_name")
     private String name;
     @Column(name = "quantity_per_unit")
     private String qttPerUnit;
     @Column(name = "units_in_stock")
-    private int stock;
+    private Integer stock;
     @Column(name = "units_on_order")
-    private int onOrder;
+    private Integer onOrder;
     @Column(name = "reorder_level")
-    private int reorderLevel;
+    private Integer reorderLevel;
     @Column(columnDefinition = "int4")
     private boolean discontinued;
+
+    @ManyToOne
+    @JoinColumn(name = "supplier_id")
+    private Supplier supplier;
+
+    @ManyToMany(mappedBy = "products")
+    private Set<Order> orders = new LinkedHashSet<>();
 }

@@ -1,13 +1,13 @@
 package be.technifutur.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.LinkedList;
+import java.util.List;
 
 @Entity
 @Table(name = "suppliers")
@@ -17,7 +17,7 @@ import lombok.Setter;
 public class Supplier {
     @Id
     @Column(name = "supplier_id")
-    private long id;
+    private Long id;
     private String address;
     private String city;
     @Column(name = "company_name")
@@ -33,4 +33,7 @@ public class Supplier {
     @Column(name = "postal_code")
     private String postalCode;
     private String region;
+
+    @OneToMany(mappedBy = "supplier")
+    private List<Product> products = new LinkedList<>();
 }
