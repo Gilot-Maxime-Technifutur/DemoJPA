@@ -13,56 +13,18 @@ import jakarta.persistence.criteria.Root;
 import java.util.List;
 import java.util.Optional;
 
-public class SupplierRepoImpl implements SupplierRepository {
-    private final EntityManager em = EMFSharer.getInstance().createEntityManager();
-
-    @Override
-    public Optional<Supplier> getOne(Long id) {
-        Supplier p = em.find(Supplier.class, id);
-
-        em.clear();
-        return Optional.ofNullable(p);
-    }
-
-    @Override
-    public List<Supplier> getAll() {
-        List<Supplier> list = em.createQuery("SELECT p FROM Supplier p", Supplier.class).getResultList();
-
-        em.clear();
-        return list;
-    }
-
-    @Override
-    public void add(Supplier toInsert) {
-        em.getTransaction().begin();
-        em.persist(toInsert);
-        em.getTransaction().commit();
-    }
-
-    @Override
-    public void update(Supplier updated, Long id) {
-        if(getOne(id).isPresent()) {
-            em.getTransaction().begin();
-            em.merge(updated);
-            em.getTransaction().commit();
-        }else
-            throw new IllegalArgumentException("element does not exist");
-    }
-
-    @Override
-    public void remove(Long id) {
-        em.getTransaction().begin();
-            Supplier p = em.find(Supplier.class, id);
-            if(p != null)
-                em.remove(p);
-        em.getTransaction().commit();
+public class SupplierRepoImpl extends AbstractCrudRepoImpl<Supplier, Long> implements SupplierRepository{
+    EntityManager em;
+    public SupplierRepoImpl(){
+        super(Supplier.class);
+        this.em = super.em;
     }
 
     @Override
     public List<Supplier> getAllFrom(String region) {
         String qlQuerry = """
                 SELECT s
-                FROM Supplier s 
+                FROM Supplier s
                 WHERE s.region = ?1
                 """;
         TypedQuery<Supplier> query = em.createQuery(qlQuerry, Supplier.class);
@@ -77,7 +39,7 @@ public class SupplierRepoImpl implements SupplierRepository {
     public void giveVIPtoAllX(char firstLetter) {
         String qlQuerry = """
                 SELECT s
-                FROM Supplier s 
+                FROM Supplier s
                 WHERE s.companyName like ?1
                 """;
         TypedQuery<Supplier> query = em.createQuery(qlQuerry, Supplier.class);
@@ -93,7 +55,7 @@ public class SupplierRepoImpl implements SupplierRepository {
     public void giveVIPtoAllXfrom(String city) {
         String qlQuerry = """
                 SELECT s
-                FROM Supplier s 
+                FROM Supplier s
                 WHERE s.city = ?1
                 """;
         TypedQuery<Supplier> query = em.createQuery(qlQuerry, Supplier.class);
@@ -124,10 +86,11 @@ public class SupplierRepoImpl implements SupplierRepository {
     public void giveVIPtoAllXfromCriteria(String city){
         CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
         CriteriaUpdate<Supplier> criteriaUpdate = criteriaBuilder.createCriteriaUpdate(Supplier.class);
-
         Root<Supplier> root = criteriaUpdate.from(Supplier.class);
-        criteriaUpdate.set("companyName", criteriaBuilder.concat(root.get("companyName"), " VIP"));
-        criteriaUpdate.where(criteriaBuilder.equal(root.get("city"), city));
+
+        criteriaUpdate
+                .set("companyName", criteriaBuilder.concat(root.get("companyName"), " VIP"))
+                .where(criteriaBuilder.equal(root.get("city"), city));
 
         em.getTransaction().begin();
             em.createQuery(criteriaUpdate).executeUpdate();
