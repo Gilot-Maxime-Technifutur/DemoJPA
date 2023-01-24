@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6115a9c-ef45-469c-bf1f-0d320eb8ab12" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/repository/CrudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/repository/SupplierRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/repository/impl/ProductRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/repository/impl/SupplierRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/utils/EMFSharer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/be/technifutur/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Territory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/technifutur/entities/Territory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>

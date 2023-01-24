@@ -23,6 +23,11 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="c845a6d8-192d-4b95-8c19-8693b2c1305b" dataset="public.suppliers" active-filter-id="EMPTY_FILTER">
+      <filter id="9a145b83-4da8-4a9b-9b31-1e44d322bf63" name="Filter" temporary="false" custom-name="false" type="custom">
+        <condition><![CDATA["public".suppliers.region like "LA"]]></condition>
+      </filter>
+    </filter-actions>
     <filter-actions connection-id="c845a6d8-192d-4b95-8c19-8693b2c1305b" dataset="public.products" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="c845a6d8-192d-4b95-8c19-8693b2c1305b" dataset="public.categories" active-filter-id="EMPTY_FILTER" />
   </component>
